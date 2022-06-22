@@ -1,8 +1,14 @@
 black
 codespell
+dask-geopandas
+geopandas
 flake8
+fsspec
 isort
 mypy
 pre-commit
 pytest
 pytest-cov
+pystac
+stactools
+git+https://github.com/TomAugspurger/stac-table

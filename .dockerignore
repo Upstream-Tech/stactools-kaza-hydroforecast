@@ -9,6 +9,8 @@ __pycache__/
 *.pyc
 *.egg-info/
 
+.venv
+
 CHANGELOG.md
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md

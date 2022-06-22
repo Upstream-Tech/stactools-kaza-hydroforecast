@@ -1,0 +1,123 @@
+{
+  "type": "Collection",
+  "id": "kaza-hydroforecast",
+  "stac_version": "1.0.0",
+  "description": "Seasonal river flow forecasts for the Kwando and Upper Zambezi rivers in the KAZA region of Africa, produced by Upstream Tech's HydroForecast model.",
+  "links": [
+    {
+      "rel": "license",
+      "href": "https://cdla.dev/sharing-1-0/",
+      "type": "text/html",
+      "title": "Community Data License Agreement \u2013 Sharing, Version 1.0"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+  ],
+  "version": "1.0.0",
+  "msft:storage_account": "ai4edataeuwest",
+  "msft:container": "hydroforecast",
+  "msft:short_description": "Seasonal river flow forecasts for the Kwando and Upper Zambezi rivers in the KAZA region of Africa, produced by Upstream Tech's HydroForecast model.",
+  "item_assets": {
+    "data": {
+      "type": "application/x-parquet",
+      "title": "River flow forecasts",
+      "roles": [
+        "data"
+      ],
+      "description": "All seasonal river flow forecasts for a specific forecast site, produced by Upstream Tech's HydroForecast model"
+    }
+  },
+  "title": "HydroForecast - Kwando & Upper Zambezi Rivers",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          23.343421,
+          -17.792517,
+          23.343421,
+          -17.792517
+        ],
+        [
+          23.343421,
+          -17.792517,
+          23.343421,
+          -17.792517
+        ],
+        [
+          21.04494,
+          -15.13158,
+          21.04494,
+          -15.13158
+        ],
+        [
+          21.80157,
+          -16.01209,
+          21.80157,
+          -16.01209
+        ],
+        [
+          22.91715,
+          -17.38856,
+          22.91715,
+          -17.38856
+        ],
+        [
+          23.00610530305009,
+          -17.347398048598034,
+          23.00610530305009,
+          -17.347398048598034
+        ],
+        [
+          22.669092,
+          -14.971843,
+          22.669092,
+          -14.971843
+        ],
+        [
+          22.675487,
+          -13.08062,
+          22.675487,
+          -13.08062
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2022-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CDLA-Sharing-1.0",
+  "providers": [
+    {
+      "name": "Upstream Tech",
+      "roles": [
+        "producer",
+        "processor",
+        "licensor"
+      ],
+      "url": "https://www.upstream.tech"
+    },
+    {
+      "name": "Microsoft",
+      "roles": [
+        "host"
+      ],
+      "url": "https://planetarycomputer.microsoft.com"
+    }
+  ],
+  "assets": {
+    "thumbnail": {
+      "href": "TODO",
+      "type": "image/png",
+      "title": "Thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
+}
