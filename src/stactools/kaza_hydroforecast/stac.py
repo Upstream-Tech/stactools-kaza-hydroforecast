@@ -1,7 +1,6 @@
 import logging
 from pathlib import Path
 
-import fsspec
 import pandas as pd
 import stac_table
 from pystac import (
@@ -130,20 +129,32 @@ def create_collection() -> Collection:
     return collection
 
 
-def create_item(asset_href: str) -> Item:
+def create_item(asset_path, protocol=None, storage_options=None, asset_extra_fields=None) -> Item:
     """
     Create a STAC Item representing a forecast data file for a single site.
 
     Args:
         asset_href (str): The HREF pointing to an asset associated with the item
+        protocol (str, optional): The fsspec protocol to use with the asset_pth.
+        storage_options (dict, optional): Passed through to pandas.read_parquet
+           when reading the asset.
+        asset_extra_fields (dict, optional): Extra fields set on the returned
+           item's `data` asset.
 
     Returns:
         Item: STAC Item object
     """
-    site = Path(asset_href).stem.replace(FILENAME_PREFIX, "").replace("_", "-")
+    storage_options = storage_options or {}
+    asset_extra_fields = asset_extra_fields or {}
+    if protocol:
+        asset_href = f"{protocol}://{asset_path}"
+    else:
+        asset_href = asset_path
+
+    site = Path(asset_path).stem.replace(FILENAME_PREFIX, "").replace("_", "-")
     site_name = site.replace("-", " ").title()
 
-    df = pd.read_parquet(fsspec.open(asset_href))
+    df = pd.read_parquet(asset_href, storage_options=storage_options)
 
     table_columns = [
         {
@@ -183,6 +194,7 @@ def create_item(asset_href: str) -> Item:
             title="Forecast Data",
             media_type=stac_table.PARQUET_MEDIA_TYPE,
             roles=["data"],
+            extra_fields=asset_extra_fields,
         ),
     )
 
