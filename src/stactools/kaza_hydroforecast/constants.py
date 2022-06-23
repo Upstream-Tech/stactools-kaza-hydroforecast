@@ -12,13 +12,24 @@ FORECAST_POINT_GEOMETRIES_BY_SITE = {
     "kwando-sub-basin-2": {"type": "Point", "coordinates": (21.80157, -16.01209)},
     "kwando-sub-basin-3": {"type": "Point", "coordinates": (22.91715, -17.38856)},
     "kwando-sub-basin-4": {"type": "Point", "coordinates": (23.006105, -17.347398)},
-    "bar-4-zambezi": {"type": "Point", "coordinates": (22.669092, -14.971843)},
-    "bar-7-zambezi": {"type": "Point", "coordinates": (22.675487, -13.08062)},
+    "luanginga-at-kalabo": {"type": "Point", "coordinates": (22.669092, -14.971843)},
+    "zambezi-at-chavuma": {"type": "Point", "coordinates": (22.675487, -13.08062)},
+    # These are deprecated site ids
+    # now luanginga-at-kalabo
+    "bar-4-zambezi": {
+        "type": "Point",
+        "coordinates": (22.669092, -14.971843),
+    },
+    # now zambezi-at-chavuma
+    "bar-7-zambezi": {
+        "type": "Point",
+        "coordinates": (22.675487, -13.08062),
+    },
 }
 
 FILENAME_PREFIX = "hydroforecast_seasonal_"
 
-COLLECTION_THUMBNAIL_HREF = "TODO"
+COLLECTION_THUMBNAIL_HREF = "https://ai4edatasetspublicassets.blob.core.windows.net/assets/pc_thumbnails/kaza-hydroforecast-thumbnail.png"
 
 COLLECTION_EXTRA_FIELDS = {
     "version": "1.0.0",
